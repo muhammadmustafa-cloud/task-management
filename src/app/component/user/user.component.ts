@@ -6,6 +6,7 @@ import {
   Input,
   Output,
   signal,
+  output
 } from '@angular/core';
 import { DUMMY_USERS } from '../../dummy-user';
 
@@ -21,6 +22,7 @@ export class UserComponent {
   @Input({ required: true }) avatar!: string;
   @Input({ required: true }) name!: string;
   @Output() select = new EventEmitter();
+  // select = output<string>()
 
   get imagePath() {
     return 'assets/users/' + this.avatar;
