@@ -4,11 +4,12 @@ import { HeaderComponent } from './component/header/header.component';
 import { UserComponent } from './component/user/user.component';
 import { DUMMY_USERS } from './dummy-user';
 import { UsersTasksComponent } from './component/users-tasks/users-tasks.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, UserComponent, UsersTasksComponent],
+  imports: [HeaderComponent, UserComponent, UsersTasksComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -16,7 +17,7 @@ export class AppComponent {
   title = 'practice';
 
   users = DUMMY_USERS;
-  selectedUserId = 'u1';
+  selectedUserId!: string;
 
   get userSelected() {
     return this.users.find((user) => user.id === this.selectedUserId)!;
