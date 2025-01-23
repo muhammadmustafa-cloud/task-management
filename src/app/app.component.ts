@@ -5,6 +5,7 @@ import { UserComponent } from './component/user/user.component';
 import { DUMMY_USERS } from './dummy-user';
 import { UsersTasksComponent } from './component/users-tasks/users-tasks.component';
 import { CommonModule } from '@angular/common';
+import { AddNewTaskComponent } from "./component/users-tasks/add-new-task/add-new-task.component";
 
 @Component({
   selector: 'app-root',

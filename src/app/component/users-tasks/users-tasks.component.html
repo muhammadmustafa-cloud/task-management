@@ -1,14 +1,17 @@
+@if(addTask){
+<app-add-new-task (cancel)="onCancelModel()"></app-add-new-task>
+}
 <section id="tasks">
   <header>
     <h2>{{ name }}'s Tasks</h2>
     <menu>
-      <button>Add Task</button>
+      <button (click)="addNewTask()">Add Task</button>
     </menu>
   </header>
   <ul>
     @for(selectUser of selectedUserTasks; track selectUser.id){
     <li>
-      <app-task [task]="selectUser"></app-task>
+      <app-task [task]="selectUser" (complete)="onCompleteTask($event)"></app-task>
     </li>
     }
   </ul>
